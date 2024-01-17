@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Header } from "@/components/auth/header";
 import { Social } from "./social";
+import { BackButton } from "@/components/auth/back-button";
 
 interface IProps {
   children: ReactNode;
@@ -31,9 +32,12 @@ export const CardWrapper: FC<IProps> = ({
       <CardContent>{children}</CardContent>
       {showSocial && (
         <CardFooter>
-          <Social></Social>
+          <Social />
         </CardFooter>
       )}
+      <CardFooter>
+        <BackButton label={backButtonLabel} href={backButtonHref} />
+      </CardFooter>
     </Card>
   );
 };
